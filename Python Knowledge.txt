@@ -1,0 +1,5 @@
+1. Change to other disc via cmd in widows - K: <discname>:
+dir - list files
+
+PersonaAccessToken2021
+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
