@@ -21,6 +21,7 @@ print(datetime.today().month)
 print(time.strftime("%H:%M"))
 print(time.strftime("%A:%p"))
 
+
 if datetime.today().day == 'Saturday':
     print('party!!')
 elif datetime.today().day == 'Sunday':
@@ -46,3 +47,18 @@ for i in range(3):
     else:
         print("This minute is even")
     time.sleep(60)
+
+
+word = "bootles"
+for vodka_num in range(99,0,-1):
+    print(vodka_num, word, "of vodka on the wall.")
+    print(vodka_num, word, "of vodka.")
+    print("Take one down.")
+    print("Pass it around.")
+    if vodka_num == 1:
+        print("No more bottles of vodka on the wall.")
+    else:
+        new_num = vodka_num -1
+        if new_num == 1:
+            word = "bottle"
+        print(new_num, word, "of vodka on the wall.")

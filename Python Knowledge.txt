@@ -1,5 +1,235 @@
-1. Change to other disc via cmd in widows - K: <discname>:
-dir - list files
+# %%
+ - Cell can be run separated 
+#
 
-PersonaAccessToken2021
-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
+###### Common Info ################
+IDE(Integrated Development Environment) IDLE Integrated Development and Learning Environment
+Zmienne w pythonie są dynamicznie przypisywanie
+Zamiast pisać blok kodu to piszemy suite
+Object oriented programing in python is optional
+Python is more like object based Python is SORT OF obcjet oriented but more "object based"
+Everything in python is object Have state(Attributes and Values) and Behavior(Metods) 
+PYTHON DONT HAVE ++	
+PEP - Python enchancement protocol
+cProfile and profile provide deterministic profiling of Python programs. https://docs.python.org/3/library/profile.html
+A profile is a set of statistics that describes how often and for how long various
+ parts of the program executed. These statistics can be formatted into reports via the pstats module.
+ import cProfile ||| cProfile.run('fun()')
+ 
+elif - TO JEST else if
+format -> indend click and get a 
+colons : <= Np jak mamy else/if etc
+_name/__name <- zmienne które się zaczynają od podkreślnika to te które są traktowane zmienne wewnętrzne i nie powinno się ich ruszać
+zazwyczaj nie ma ich w przestrzeni nazw
+3imie <- not allowed imie3 <- allowed cannot start with number
+
+orange/yellow name == build in variable ex True
+
+######## Printing  #####################
+max 79 char per line
+print("a"*3) = aaa print('a' 'b') =ab
+print("something", end =", ") Printing in new Line
+print(r"C:\tools") C:\tools <-raw text print
+print("C:\tools")  C:	 ools 
+txt3 = "My name is {}, I'm {}".format("John",36)  < - https://www.w3schools.com/python/ref_string_format.asp
+import pprint  pprint.print()<- Printing in more clear way with indends 
+Inside class with metod(self)         print(f'Drzewo {self.nazwa} ma {self.wiek} lat')
+{} - Operator zastępczy
+###### String #####
+str.split(char/str) -> List
+(char/str).join(List) -> Str from list separated with first argument
+dir(str) <- check all methods help(str.<methods>) <- help
+str.capitalize() <- only first letter str.title() <- all first letters capitalize 
+.count() -> number of letter || .startswith/endswith(<char/str>) -> true false 
+.find()|| .sialnum() <-check if every char is aplhanumeric|| .isdigit() || .islower() || .isupper()
+.replace('','')  .split() ->list
+.strip/.lstrip/.rstrip -> removes wit
+print(f'Drzewo {self.nazwa} ma {self.wiek} lat
+  lIST TO A/ B/ C...
+print("exam date will be ", *exam_st_date, sep ='/ ')
+print("exam date will be ", ' / '.join(map(str, exam_st_date)) )
+
+######## Functions #########
+def properDiffrenceFunction(a:int, b:int=0) ->int:  ->(class optional)
+    """This function purpose is to add two integer numbers""" <- Help documentation for function
+    return a - b
+print(properDiffrenceFunction(3,1))
+print(properDiffrenceFunction(b=1,a=3)) <- If you point out parameters order does not matter
+print(properDiffrenceFunction(3))
+
+lambda <variables>: <function body>
+lamba a,b: a + b
+
+map(func, *iterables) --> map object 
+!!If we want have list (in most cases) we need make list(map(..)) <---- without it we get <map object at 0x000002350F057128>
+
+def apply_function(x,fn):
+    return fn(x)
+/\ Function which use function as variable
+
+def bigFucntion(*args): <- more than one argument (pack all arguments to krotka
+**kwargs <- more than one argument and use names  (dictionary {'x1': 10, 'x2': 20})
+https://analityk.edu.pl/python-args-kwargs-pl/
+site-packages - 
+distribution packages -                                
+
+global / nonlocal
+.__code__.co_varnames <all function variables
+globals() <-słownik globalne funkcje
+### Generators    <><>
+for iteration using 'yield'
+
+######## Build in Functions #########
+instance(a, type) <- Check if object type is given type
+type(int/str/float/bool/type) -> type
+help(<Module>.<Function>)
+.__doc__ - dokumentacja o funkcji
+dir(<Imported Module>) -> displays all information associated with module/object
+sorted(data, key = function) 
+print(sorted(someNumbers, key= lambda x:abs(x))) = [0, -1, 1, -2, 2, -3, 3, -4]
+import datetime
+datetime.datetime.today()
+import datetime from datetime <= IMPORT ONLY Function from datetime and 
+instead of datetime.datetime.today() we have datetime.today()
+datetime().today
+
+import platform  ||| platform.system()|| platform.release()  <-Python platform information
+import cProfile ||| cProfile.run('fun()') <-!!!! Checking function profiling https://docs.python.org/3/library/profile.html
+import os ||| os.name() || os.system('<commend>') || os.getcwd() or os.path.realpath(__file__) <- cURRENTLY working file
+os.environ() <- get environment variables
+import multiprocessing multiprocessing.cpu_count() <-- CPU Count
+import keyword     keyword.kwlist <-List of keywords
+datetime.datetime.utcnow()
+
+import os
+print(os.system('ls -l'))
+
+import builtins <- defaultowe funkcje wbudowane
+max([1,2,3]) == builtins.max([1,2,3])
+vars = withour args locals() wit args <moduleName>.__dict__
+########sHORT CUTS ########################
+ctrl + shift + R -> find and replace
+alt + P -> Recal last shell command
+
+##########Modules##########
+import chapter8Modules.functionsModules
+print(dir(hapter8Modules.functionsModules))
+from chapter8Modules import functionsModules
+print(dir(functionsModules))
+from chapter8Modules import * <- not recomended but takes all of functions from dir
+
+!!!Read about modules packanges diffrence ?
+
+########4 Python build in data ###############
+
+##########LIST##########
+LIST - an ordered mutable collection of objects (dynamic structre [mutable can srhink or grow]) have index
+list in python are heterogeneous (we can mix types inside),
+square bracketsa object separated by comma, list = [] <- create of empty list
+.append() adding one element to the list
+.remove() remove first occurrence of specified data
+.pop() Deleting x element of list removing and returns 
+.extend() take a list of objects as its sole argument(jednym argumentem) 
+.insert() insert object in list before specified index
+.count(listElement) counts occurrence of given element in list
+If we tried .extend([]) do nothing instead of .append([]) will add empty list to list
+len()
+If we take string and put it into list it will dissassemble into char list
+second = [1,2,3,4] first = second => Its no coppy if we add element to second first will also gain that element [Both list pointed to the same data]
+third = first.copy()
+print(list[start:stop:step]) ->  [::] [0:max:1] -> [start] =[start:max:1] = [start::] -> [start:stop] = [start:stop:] = [start:stop:1]  => [::] [0:max:1]
+list()=> from string to list of char(SIGNLE CHARACTER STRINGS) 
+List comprehation - [x*y for x in list for y in list if x > 2] 
+##########DICTIONARY##########
+DICTIONARY - Unordered set of keys and value pairs [Associative array,Map,Symbol table,Hash]
+Unordered and mutable {}  found = {'a':0, 'o':0, 'i':0, 'e':0,'u':0}
+multiple iteration for k,v in dictionary.items() => k will be key v be value~! Ex: for k,v in dictionaryName.items():
+dictionary.stdefault('key',value) <- initialize (if needed)
+
+secondStock = {key: <ifTrue> if <warunek> else <ifFalse> for (key,value) in stocks.items()}
+
+##########TUPLE##########
+TUPLE - and ordered immutable collection of obects [Const list] have index (,,,)
+in order to tuple to be tuble there need be at lease one coma , so type('Word') is string type('Word',) is tuple
+
+##########SET##########
+SET  - Unordered set of uniqale objects [Colection of unorderet unique items no duplicate allowed]
+set('aeeeiuuuuouuuuyy') = {a,e,i,u,o,y}
+.add()
+.remove()
+.pop()<- randrom element
+.clear()
+.union() <- combines 2 sets
+.difrence() A \ B
+.intersection() A ∩ B
+.symetric_diffrence() (A ∩ B)'
+.copy
+https://www.w3schools.com/python/python_sets.asp
+
+###### OOP ################
+math.__dict__ <- słownik 
+for key in sorted(sys.__dict__.keys()):
+  print(key) <- printuje wszystkie klucze
+Class with capital latter object with small
+Class Atributes - Atributes inside of class we can add more atributes like Three.name and it will update all objects
+Instance Atrributes - Atributes INSIDE of one of the object like
+If we define class rule says that 2 enter befor and 2 enter after need to be puted
+Tree = tree1
+tree1.quality = "good" <- updating only one object
+print(f'Drzewo {self.nazwa} ma {self.wiek} lat')
+
+__init__ <-constructor
+    @staticmethod
+    def liczba_studentow():
+        print(len(Student.lista_studentow))
+When we need to make method for all class instead of adding self and every time pointing one of object from class we can
+point class itself
+
+inheretence ############
+class Men()|| class Futballer(Men)
+__init__futbaler(..<>)
+	super().__init__(..)
+	self.<> = <>
+	
+def info(self):
+    super().info()
+    print(f"play in club {self.club}")
+
+Hermetization ############
+
+public
+_protected - Only inside mother class
+__private - fully protected
+
+help(object) - basic class 
+### Unity tests #####
+
+try:
+    1 / 0
+except ZeroDivisionError:
+    print("Nie dzieli się przez zero")
+	
+raise TypeError("Blond krytyczny error error")
+assertEqual/NotEqual/In/NotIn/True/False
+self.skipTest('pomin') = @unittest.skip('pomin')
+@unittest.skipIf/skipUnless/expectedFailure
+
+if __name__ == "__main__":
+    unittest.main()
+
+Phone.__dict__['height'] = Phone.heigh = getattr(Phone,'height')
+
+!!Python uses first argument instance of object if we call function from instance level
+from instance level we can get class name - self.__class__.__name__
+
+any comprehation works like fucntion!!! Take ariables from global dict
+#### Magic metods ####
+https://docs.python.org/3/reference/datamodel.html
+
+
+####### Links #########
+https://www.youtube.com/watch?v=bxe2T-V8XRs&list=PLxtZWOzqbApW6Yvw41wDf0uc5hixr1b02 <-AI
+def disemvowel(s):
+    return s.translate(None, "aeiouAEIOU")
+	
+	E9EPB-39KPG-CM9XF-PWT3N
